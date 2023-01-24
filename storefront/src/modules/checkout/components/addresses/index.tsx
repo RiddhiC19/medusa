@@ -5,6 +5,8 @@ import Spinner from "@modules/common/icons/spinner"
 import BillingAddress from "../billing_address"
 import ShippingAddress from "../shipping-address"
 
+
+
 const Addresses = () => {
   const {
     sameAsBilling: { state: checked, toggle: onChange },
@@ -15,30 +17,80 @@ const Addresses = () => {
   } = useCheckout()
   return (
     <div className="bg-white">
-      <div className="text-xl-semi flex items-center gap-x-4 px-8 pb-6 pt-8">
+      {/* <div className="text-xl-semi flex items-center gap-x-4 px-8 pb-6 pt-8">
         <div className="bg-gray-900 w-8 h-8 rounded-full text-white flex justify-center items-center text-sm">
           1
         </div>
         <h2>Shipping address</h2>
-      </div>
+      </div> */}
       {isEdit ? (
-        <div className="px-8 pb-8">
+        <div className=" pb-8">
           <ShippingAddress />
-          <div className="mt-6">
+          {/* start checkbox */}
+          <div className="checkform mb-16">
+            <div className="form-check pb-10">
+              <input type="checkbox" className="chb chb-1 pb-4" id="chb-1" />
+              <label htmlFor="chb-1">
+                <span className="pl-6 text-base">
+                  I agree to recieve Feno promo emails
+                </span>
+              </label>
+            </div>
+
+            <div className="form-check pb-10">
+              <input type="checkbox" className="chb chb-1 pb-4" id="chb-2" />
+              <label htmlFor="chb-2">
+                <span className="pl-6 text-base font-normal">
+                  I agree to Feno{' '}
+                  <span className="text-[#1437BF] underline">
+                    Terms & Conditions
+                  </span>
+                </span>
+              </label>
+            </div>
+            <div className="form-check pb-10">
+              <input type="checkbox" className="chb chb-1 pb-4" id="chb-3" />
+              <label htmlFor="chb-3">
+                <span className="pl-6 text-base font-normal">
+                  I agree to{' '}
+                  <span className="text-[#1437BF] underline">
+                    Feno Privacy Policy
+                  </span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          {/* end checkbox */}
+          <div className=""><div className="text-xl font-semibold pb-6">
+            Shipping Address
+          </div>
+            {/* <div className="form-check pb-10">
+              <input type="checkbox" className="chb chb-1 pb-4" id="chb-4" />
+              <label htmlFor="chb-4">
+                <span className="pl-6 text-base font-normal">
+                  Use Billing Address as Shipping Address
+                </span>
+              </label>
+            </div> */}
+          </div>
+
+
+          <div className=" mb-10">
             <Checkbox
-              label="Same as billing address"
+              label="Use Billing Address as Shipping Address"
               checked={checked}
               onChange={onChange}
             />
           </div>
           {!checked && (
             <div>
-              <div className="text-xl-semi flex items-center gap-x-4 pb-6 pt-8">
+              {/* <div className="text-xl-semi flex items-center gap-x-4 pb-6 pt-8">
                 <div className="bg-gray-900 w-8 h-8 rounded-full text-white flex justify-center items-center font-mono text-sm">
                   2
                 </div>
                 <h2>Billing address</h2>
-              </div>
+              </div> */}
               <BillingAddress />
             </div>
           )}

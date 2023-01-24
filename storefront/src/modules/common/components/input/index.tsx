@@ -13,10 +13,12 @@ type InputProps = Omit<
   errors?: Record<string, unknown>
   touched?: Record<string, unknown>
   name: string
+  placeholder?: string
+
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ type, name, label, errors, touched, required, ...props }, ref) => {
+  ({ type, name, label, errors, touched, required, placeholder, ...props }, ref) => {
     const inputRef = React.useRef<HTMLInputElement>(null)
     const [showPassword, setShowPassword] = useState(false)
     const [inputType, setInputType] = useState(type)
@@ -37,25 +39,12 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
     return (
       <div>
-        <div className="relative z-0 w-full text-base-regular">
-          <input
-            type={inputType}
-            name={name}
-            placeholder=" "
-            className={clsx(
-              "pt-4 pb-1 block w-full px-4 mt-0 bg-transparent border appearance-none focus:outline-none focus:ring-0 focus:border-gray-400 border-gray-200",
-              {
-                "border-rose-500 focus:border-rose-500": hasError,
-              }
-            )}
-            {...props}
-            ref={inputRef}
-          />
+        <div className="relative z-0 w-full ">
           <label
             htmlFor={name}
             onClick={() => inputRef.current?.focus()}
             className={clsx(
-              "mx-3 px-1 transition-all absolute duration-300 top-3 -z-1 origin-0 text-gray-500",
+              "transition-all  duration-300  -z-1 origin-0 text-[#2C2F32] text-base font-medium pb-2",
               {
                 "!text-rose-500": hasError,
               }
@@ -64,6 +53,20 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             {label}
             {required && <span className="text-rose-500">*</span>}
           </label>
+          <input
+            type={inputType}
+            name={name}
+            placeholder={placeholder}
+            className={clsx(
+              "py-4 block w-full px-10  bg-transparent border-2 rounded-lg appearance-none focus:outline-none focus:ring-0 focus:border-gray-400 border-gray-200 mt-2 mb-6",
+              {
+                "border-rose-500 focus:border-rose-500": hasError,
+              }
+            )}
+            {...props}
+            ref={inputRef}
+          />
+
           {type === "password" && (
             <button
               type="button"

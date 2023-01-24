@@ -21,7 +21,7 @@ const ShippingAddress = () => {
       <ConnectForm<CheckoutFormValues>>
         {({ register, formState: { errors, touchedFields } }) => (
           <div className="grid grid-cols-1 gap-y-2">
-            <Input
+            {/* <Input
               label="Email"
               {...register("email", {
                 required: "Email is required",
@@ -30,17 +30,20 @@ const ShippingAddress = () => {
               autoComplete="email"
               errors={errors}
               touched={touchedFields}
-            />
-            <div className="grid grid-cols-2 gap-x-2">
+            /> */}
+            <div className="grid grid-cols-1 gap-x-2">
               <Input
-                label="First name"
+                label="Full Name"
                 {...register("shipping_address.first_name", {
-                  required: "First name is required",
+                  required: "full name is required",
                 })}
                 autoComplete="given-name"
                 errors={errors}
                 touched={touchedFields}
+                placeholder="Full Name"
               />
+            </div>
+            {/* <div className="grid grid-cols-1 gap-x-2" >
               <Input
                 label="Last name"
                 {...register("shipping_address.last_name", {
@@ -49,52 +52,58 @@ const ShippingAddress = () => {
                 autoComplete="family-name"
                 errors={errors}
                 touched={touchedFields}
+                placeholder="Last name"
               />
-            </div>
-            <Input
+            </div> */}
+            {/* <Input
               label="Company"
               {...register("shipping_address.company")}
               autoComplete="organization"
               errors={errors}
               touched={touchedFields}
-            />
+            /> */}
             <Input
-              label="Address"
+              label="Street Address"
               {...register("shipping_address.address_1", {
                 required: "Address is required",
               })}
               autoComplete="address-line1"
               errors={errors}
               touched={touchedFields}
+              placeholder="2972 Westheimer Rd. Santa Ana"
             />
             <Input
-              label="Apartments, suite, etc."
-              {...register("shipping_address.address_2")}
-              autoComplete="address-line2"
+              label="City"
+              {...register("shipping_address.city", {
+                required: "City is required",
+              })}
+              autoComplete="address-level2"
               errors={errors}
               touched={touchedFields}
+              placeholder="Westheimer"
             />
-            <div className="grid grid-cols-[122px_1fr] gap-x-2">
+            <div className="grid grid-cols-2 gap-x-2 mb-2">
+
               <Input
-                label="Postal code"
+                label="State / Region"
+                {...register("shipping_address.province")}
+                autoComplete="address-level1"
+                errors={errors}
+                touched={touchedFields}
+                placeholder="Manchester"
+              />
+              <Input
+                label="Postal Code"
                 {...register("shipping_address.postal_code", {
                   required: "Postal code is required",
                 })}
                 autoComplete="postal-code"
                 errors={errors}
                 touched={touchedFields}
-              />
-              <Input
-                label="City"
-                {...register("shipping_address.city", {
-                  required: "City is required",
-                })}
-                autoComplete="address-level2"
-                errors={errors}
-                touched={touchedFields}
+                placeholder="85486"
               />
             </div>
-            <CountrySelect
+            {/* <CountrySelect
               {...register("shipping_address.country_code", {
                 required: "Country is required",
               })}
@@ -115,7 +124,7 @@ const ShippingAddress = () => {
               autoComplete="tel"
               errors={errors}
               touched={touchedFields}
-            />
+            /> */}
           </div>
         )}
       </ConnectForm>

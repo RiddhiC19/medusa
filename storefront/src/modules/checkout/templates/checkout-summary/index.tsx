@@ -18,9 +18,9 @@ const CheckoutSummary = () => {
         <PaymentButton paymentSession={cart?.payment_session} />
       </div>
       <div className="p-6 bg-white">
-        <DiscountCode cart={cart} />
+        {/* <DiscountCode cart={cart} /> */}
       </div>
-      <GiftCard cart={cart} />
+      {/* <GiftCard cart={cart} /> */}
     </div>
   )
 }

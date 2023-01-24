@@ -54,7 +54,7 @@ const NativeSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
 
     return (
 
-      <div className="pl-1">
+      <div className="pl-1 ">
         <div
           onFocus={() => innerRef.current?.focus()}
           onBlur={() => innerRef.current?.blur()}
@@ -66,18 +66,22 @@ const NativeSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
             }
           )}
         >
+          <span className="absolute  bg-[#2c2f32]/[.08] pl-3 pr-1 rounded-lg">
+            X
+            {/* <ChevronDown /> */}
+          </span>
           <select
             ref={innerRef}
             {...props}
-            className="appearance-none flex-1 bg-transparent border-none  transition-colors duration-150 focus:border-gray-700 outline-none"
+            className="appearance-none flex-1 bg-transparent border-none  transition-colors duration-150 focus:border-gray-700 outline-none pl-1"
           >
             <option value="">{placeholder}</option>
             {children}
           </select>
-          <span className="absolute right-13 bg-[#2c2f32]/[.08] pl-3 pr-1">
-            X
-            {/* <ChevronDown /> */}
-          </span>
+          {/* <span className="absolute  bg-[#2c2f32]/[.08] pl-2">
+            X */}
+          {/* <ChevronDown /> */}
+          {/* </span> */}
         </div>
         {hasError && props.name && (
           <ErrorMessage

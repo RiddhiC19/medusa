@@ -19,7 +19,7 @@
 
   input:focus ~ label,
   input:not(:placeholder-shown) ~ label {
-    @apply -translate-y-2 text-xsmall-regular; 
+    @apply -translate-y-2 text-xsmall-regular;
   }
 
   input:focus ~ label {
@@ -51,7 +51,7 @@
 
 @layer components {
   .content-container {
-    @apply max-w-[1440px] w-full mx-auto px-8
+    @apply max-w-[1440px] w-full mx-auto px-8;
   }
 
   .contrast-btn {
@@ -109,4 +109,41 @@
   .text-3xl-semi {
     @apply text-[36px] leading-[48px] font-semibold;
   }
+}
+
+/* custom css */
+.chb {
+  visibility: hidden;
+}
+
+.chb + label {
+  position: relative;
+  padding-left: 5px;
+}
+
+.chb-1 + label::before {
+  position: absolute;
+
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border: 1px SOLID gray;
+  /* background-color: #2c2f32; */
+  border-radius: 8px;
+  content: "";
+
+  /* top: 4px; */
+  left: -16px;
+  /* padding-bottom: 5px; */
+
+  font-size: 11px;
+  text-align: center;
+  font-weight: bolder;
+  padding: 3px;
+}
+.chb-1:checked + label::before {
+  color: white;
+  content: url(./../../public/Check.png);
+  background-color: #2c2f32;
+  border: 1px solid #2c2f32;
 }

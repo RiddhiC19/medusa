@@ -9,11 +9,12 @@ import Thumbnail from "@modules/products/components/thumbnail"
 type ItemProps = {
   item: Omit<LineItem, "beforeInsert">
   region: Region
+  isLast: boolean
 }
 
-const Item = ({ item, region }: ItemProps) => {
+const Item = ({ item, region, isLast }: ItemProps) => {
   const { updateItem, deleteItem } = useStore()
-
+  console.log("==>", isLast);
   return (
     <div>
       {/* <div className="grid grid-cols-[122px_1fr] gap-x-4">
@@ -67,7 +68,7 @@ const Item = ({ item, region }: ItemProps) => {
       {/* ------------------ */}
       <div className="checkout-detail flex justify-between ">
         <div className="number flex items-center justify-center  ">
-          <div className="  rounded-lg text-base font-medium leading-5 tracking-wider">
+          <div className="  rounded-lg text-base font-medium leading-5 ">
             <NativeSelect
               value={item.quantity}
               onChange={(value) =>
@@ -92,13 +93,15 @@ const Item = ({ item, region }: ItemProps) => {
           </div>
         </div>
         <div className="img flex items-center justify-center">
-          <div className="w-[122px]">
-            <Thumbnail thumbnail={item.thumbnail} size="full" />
+          <div className="w-[123px] h-[69px]">
+            <Thumbnail thumbnail={item.thumbnail} size="custum" />
           </div>
         </div>
         <div className="name flex items-center justify-center">{item.title}</div>
         <div className="price flex items-center justify-center"> <LineItemPrice item={item} region={region} /></div>
       </div>
+      {isLast ? null : <hr className="bg-[#2c2f32]/[.08] my-4"></hr>}
+      {/* <hr className="bg-[#2c2f32]/[.08] my-4"></hr> */}
     </div>
   )
 }

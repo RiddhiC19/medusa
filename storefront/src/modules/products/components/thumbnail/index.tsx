@@ -7,7 +7,7 @@ import React from "react"
 type ThumbnailProps = {
   thumbnail?: string | null
   images?: MedusaImage[] | null
-  size?: "small" | "medium" | "large" | "full"
+  size?: "small" | "medium" | "large" | "full" | "custum"
 }
 
 const Thumbnail: React.FC<ThumbnailProps> = ({
@@ -24,6 +24,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
         "w-[290px]": size === "medium",
         "w-[440px]": size === "large",
         "w-full": size === "full",
+        "w-[123px] h-[69px]": size === "custum",
       })}
     >
       <ImageOrPlaceholder image={initialImage} size={size} />

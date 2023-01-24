@@ -1,5 +1,5 @@
 import React from "react"
-
+import Image from "next/image"
 type CheckboxProps = {
   checked?: boolean
   onChange?: () => void
@@ -13,7 +13,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
 }) => {
   return (
     <button
-      className="text-base-regular flex items-center gap-x-2"
+      className="text-base-regular flex items-center gap-x-2 "
       role="checkbox"
       type="button"
       aria-checked={checked}
@@ -22,9 +22,21 @@ const Checkbox: React.FC<CheckboxProps> = ({
       <div
         role="checkbox"
         aria-checked={checked}
-        className="border border-gray-900 w-5 h-5 flex items-center justify-center"
+        className="border border-[#2c2f32] rounded-lg  w-6 h-6 flex items-center justify-center  overflow-hidden"
       >
-        {checked ? "✓" : null}
+        {checked ? <Image
+          src="/Check.png"
+          width="24px"
+          height="24px"
+          //layout="responsive"
+          //loading="eager"
+          //priority={true}
+          //quality={90}
+          objectFit="none"
+          //alt="Photo by @thevoncomplex https://unsplash.com/@thevoncomplex"
+          className="absolute inset-0 bg-[#2c2f32] "
+        //="false"
+        /> : null}
       </div>
       <span>{label}</span>
     </button>
@@ -32,3 +44,4 @@ const Checkbox: React.FC<CheckboxProps> = ({
 }
 
 export default Checkbox
+// "✓"
