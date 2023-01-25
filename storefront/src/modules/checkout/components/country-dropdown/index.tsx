@@ -1,10 +1,10 @@
-import NativeSelect, {
-  NativeSelectProps,
-} from "@modules/common/components/native-select"
+import CountrySelect, {
+  CountrySelectProps,
+} from "@modules/common/components/country-select"
 import { useCart, useRegions } from "medusa-react"
 import { forwardRef, useImperativeHandle, useMemo, useRef } from "react"
 
-const CountrySelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
+const CountryDropdown = forwardRef<HTMLSelectElement, CountrySelectProps>(
   ({ placeholder = "Country", ...props }, ref) => {
     const innerRef = useRef<HTMLSelectElement>(null)
 
@@ -30,18 +30,18 @@ const CountrySelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
     }, [regions, cart])
     console.log("rrrrr==>", regions);
     return (
-      <NativeSelect ref={innerRef} placeholder={placeholder} {...props}>
+      <CountrySelect ref={innerRef} placeholder={placeholder} {...props}>
         {countryOptions.map(({ value, label }, index) => (
           <option key={index} value={value}>
             {label}
 
           </option>
         ))}
-      </NativeSelect>
+      </CountrySelect>
     )
   }
 )
 
-CountrySelect.displayName = "CountrySelect"
+CountryDropdown.displayName = "CountryDropdown"
 
-export default CountrySelect
+export default CountryDropdown

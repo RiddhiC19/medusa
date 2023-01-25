@@ -235,7 +235,7 @@ const ManualTestPaymentButton = ({ notReady }: { notReady: boolean }) => {
 
   return (
     <Button disabled={submitting || notReady} onClick={handlePayment}>
-      {submitting ? <Spinner /> : "Checkout"}
+      {submitting ? <Spinner /> : "Place Order"}
     </Button>
   )
 }

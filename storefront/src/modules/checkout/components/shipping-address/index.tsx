@@ -4,7 +4,7 @@ import ConnectForm from "@modules/common/components/connect-form"
 import Input from "@modules/common/components/input"
 import { useMeCustomer } from "medusa-react"
 import AddressSelect from "../address-select"
-import CountrySelect from "../country-select"
+import CountrySelect from "../country-dropdown"
 
 const ShippingAddress = () => {
   const { customer } = useMeCustomer()

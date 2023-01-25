@@ -1,7 +1,7 @@
 import { CheckoutFormValues } from "@lib/context/checkout-context"
 import ConnectForm from "@modules/common/components/connect-form"
 import Input from "@modules/common/components/input"
-import CountrySelect from "../country-select"
+import CountryDropdown from "../country-dropdown"
 
 const BillingAddress = () => {
   return (
@@ -17,16 +17,12 @@ const BillingAddress = () => {
             autoComplete="given-name"
             errors={errors}
             touched={touchedFields}
+            placeholder="Full Name"
           />
-          <div className="grid gap-x-2 grid-cols-[144px_1fr]">
-            {/* <Input
-              label="Phone"
-              {...register("billing_address.phone")}
-              autoComplete="tel"
-              errors={errors}
-              touched={touchedFields}
-            /> */}
-            <CountrySelect
+          <div className="PhoneLable">Phone Number</div>
+          <div className="grid gap-x-2 grid-cols-[100px_1fr]">
+
+            <CountryDropdown
               {...register("billing_address.country_code", {
                 required: "Country is required",
               })}
@@ -35,11 +31,12 @@ const BillingAddress = () => {
               touched={touchedFields}
             />
             <Input
-              label="Phone"
+              label=""
               {...register("billing_address.phone")}
               autoComplete="tel"
               errors={errors}
               touched={touchedFields}
+              placeholder="(406) 555-0120"
             />
 
           </div>
@@ -52,6 +49,7 @@ const BillingAddress = () => {
             autoComplete="address-line1"
             errors={errors}
             touched={touchedFields}
+            placeholder="2972 Westheimer Rd. Santa Ana"
           />
           <Input
             label="City"
@@ -61,6 +59,7 @@ const BillingAddress = () => {
             autoComplete="address-level2"
             errors={errors}
             touched={touchedFields}
+            placeholder="Westheimer"
           />
 
           <div className="grid grid-cols-2 gap-x-2">
@@ -70,6 +69,7 @@ const BillingAddress = () => {
               autoComplete="address-level1"
               errors={errors}
               touched={touchedFields}
+              placeholder="Manchester"
             />
             <Input
               label="Postal code"
@@ -79,17 +79,11 @@ const BillingAddress = () => {
               autoComplete="postal-code"
               errors={errors}
               touched={touchedFields}
+              placeholder="85486"
             />
 
           </div>
-          {/* <CountrySelect
-            {...register("billing_address.country_code", {
-              required: "Country is required",
-            })}
-            autoComplete="country"
-            errors={errors}
-            touched={touchedFields}
-          /> */}
+
 
 
         </div>
