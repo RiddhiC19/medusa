@@ -32,7 +32,7 @@ const CheckoutSummary = () => {
             className=""
             onClick={handleSubmit(setAddresses)}
           >
-            Continue to delivery
+            Continue
           </Button>
         )}
 

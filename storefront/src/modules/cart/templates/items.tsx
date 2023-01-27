@@ -12,7 +12,7 @@ const ItemsTemplate = ({ items, region }: ItemsTemplateProps) => {
   return (
     <div>
       <div className=" border-gray-200  flex items-center py-9 mb-6">
-        <h1 className="text-xl-semi">Order Details</h1>
+        <h1 className="text-xl-semi text-xl">Order Details</h1>
       </div>
       <div className="grid grid-cols-1  ">
         {items && region
