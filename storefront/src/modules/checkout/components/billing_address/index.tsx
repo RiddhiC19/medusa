@@ -7,7 +7,7 @@ const BillingAddress = () => {
   return (
     <ConnectForm<CheckoutFormValues>>
       {({ register, formState: { errors, touchedFields } }) => (
-        <div className="grid grid-cols-1 gap-y-2">
+        <div className="grid grid-cols-1 ">
 
           <Input
             label="Full Name"
@@ -19,7 +19,7 @@ const BillingAddress = () => {
             touched={touchedFields}
             placeholder="Full Name"
           />
-          <div className="PhoneLable">Phone Number</div>
+          <div className="PhoneLable text-[#2C2F32] text-base font-medium">Phone Number</div>
           <div className="grid gap-x-2 grid-cols-[100px_1fr]">
 
             <CountryDropdown

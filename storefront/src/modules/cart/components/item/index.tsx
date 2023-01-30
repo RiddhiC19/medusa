@@ -85,7 +85,7 @@ const Item = ({ item, region, isLast }: ItemProps) => {
                   const value = i + 1
                   return (
                     <option value={value} key={i}>
-                      {value}
+                      {value}{"X"}
                     </option>
                   )
                 })}

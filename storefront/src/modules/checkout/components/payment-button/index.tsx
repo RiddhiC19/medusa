@@ -18,6 +18,8 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({ paymentSession }) => {
 
   useEffect(() => {
     setNotReady(true)
+    // console.log('[CART cart]', cart);
+
 
     if (!cart) {
       return

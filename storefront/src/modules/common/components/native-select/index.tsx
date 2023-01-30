@@ -67,13 +67,14 @@ const NativeSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
           )}
         >
           <span className="absolute  bg-[#2c2f32]/[.08] pl-3 pr-1 rounded-lg">
-            X
+            {/* X */}
             {/* <ChevronDown /> */}
           </span>
           <select
+
             ref={innerRef}
             {...props}
-            className="appearance-none flex-1 bg-transparent border-none  transition-colors duration-150 focus:border-gray-700 outline-none pl-1"
+            className="appearance-none flex-1  border-none  transition-colors duration-150 focus:border-gray-700 outline-none pl-1 bg-[#2c2f32]/[.08] absolute w-7 rounded-lg"
           >
             <option value="">{placeholder}</option>
             {children}
