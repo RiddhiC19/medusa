@@ -38,7 +38,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
         //="false"
         /> : null}
       </div>
-      <span>{label}</span>
+      <span className="font-normal text-base">{label}</span>
     </button>
   )
 }

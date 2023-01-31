@@ -80,12 +80,12 @@ const FooterNav = () => {
           <div className="text-[#fff] text-5xl font-medium pr-60">
             Stay Connected
           </div>
-          <div className="my-10 pb-4 text-[#ffffff]/[0.3] border border-t-0 border-l-0 border-r-0  border-[#ffffff]/[0.3] mr-72">
+          <div className="my-10 pb-4 text-[#ffffff]/[0.3] border border-t-0 border-l-0 border-r-0  border-[#ffffff]/[0.3] mr-56">
             <div className="   placeholder-[#ffffff]/[0.3]  ">
               <div className="relative w-full ">
                 <div className="inputs  flex justify-between">
                   <input
-                    className="w-full outline-0  bg-[#2C2F32]  "
+                    className="w-full outline-0  bg-[#2C2F32] text-xl "
                     type="text"
                     name="card_number"
                     placeholder="Drop us your email to stay in the loop."
@@ -95,27 +95,27 @@ const FooterNav = () => {
             </div>
           </div>
           <div className="">
-            <span className="bg-[#1437BF] text-[#fff] rounded-full px-10 py-4 ">
+            <span className="bg-[#1437BF] text-[#fff] rounded-full px-10 py-4 text-base font-medium">
               Subscribe Now
             </span>
           </div>
         </div>
 
         <div className="Explore">
-          <div className="ExploreTitle text-[#fff]/[0.4] pb-8 text-xl">
+          <div className="ExploreTitle text-[#fff]/[0.4] pb-8 text-xl pl-32">
             Explore
           </div>
-          <ul className="text-[#fff]/[0.8] text-base  font-normal">
+          <ul className="text-[#fff]/[0.8] text-base  font-normal pl-32">
             <li className="pb-4">Feno Brush</li>
             <li className="pb-4">Features & Benefits</li>
             <li className="pb-4">Feno App</li>
           </ul>
         </div>
         <div className="About">
-          <div className="ExploreTitle text-[#fff]/[0.4] pb-8  text-xl">
+          <div className="ExploreTitle text-[#fff]/[0.4] pb-8  text-xl pl-44">
             About
           </div>
-          <ul className="text-[#fff]/[0.8] text-base font-normal">
+          <ul className="text-[#fff]/[0.8] text-base font-normal pl-44">
             <li className="pb-4">Our Story</li>
             <li className="pb-4">Reviews</li>
             <li className="pb-4">Press</li>
@@ -123,16 +123,16 @@ const FooterNav = () => {
           </ul>
         </div>
         <div className="Connect">
-          <div className="ExploreTitle text-[#fff]/[0.4] pb-8  text-xl">
+          <div className="ExploreTitle text-[#fff]/[0.4] pb-8  text-xl pl-44">
             Connect
           </div>
-          <ul className="text-[#fff]/[0.8] text-base font-normal">
+          <ul className="text-[#fff]/[0.8] text-base font-normal pl-44">
             <li className="pb-4">Contact Us</li>
             <li className="pb-4">Live Chat</li>
             <li className="pb-4">Social</li>
           </ul>
         </div>
-        <div className="Help">
+        <div className="Help pl-44">
           <div className="ExploreTitle text-[#fff]/[0.4] pb-8 text-xl">
             Help
           </div>

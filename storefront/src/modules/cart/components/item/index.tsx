@@ -97,7 +97,7 @@ const Item = ({ item, region, isLast }: ItemProps) => {
             <Thumbnail thumbnail={item.thumbnail} size="custum" />
           </div>
         </div>
-        <div className="name flex items-center justify-center">{item.title}</div>
+        <div className="name flex items-center justify-center text-lg font-normal">{item.title}</div>
         <div className="price flex items-center justify-center"> <LineItemPrice item={item} region={region} /></div>
       </div>
       {isLast ? null : <hr className="bg-[#2c2f32]/[.08] my-4"></hr>}

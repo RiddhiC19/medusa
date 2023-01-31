@@ -18,7 +18,7 @@ const Button = ({
     <button
       {...props}
       className={clsx(
-        "w-full  flex items-center justify-center  px-6 py-[16px] text-lg border transition-colors duration-200 disabled:opacity-50",
+        "w-full  flex items-center justify-center  px-6 py-[16px] text-lg border transition-colors duration-200 disabled:opacity-50 font-medium",
         {
           "text-white bg-[#1437BF] border-gray-900 hover:bg-white hover:text-gray-900 disabled:hover:bg-gray-900  rounded-full disabled:hover:text-white":
             variant === "primary",
